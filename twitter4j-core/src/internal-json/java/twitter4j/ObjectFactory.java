@@ -90,4 +90,6 @@ interface ObjectFactory extends java.io.Serializable {
     <T> ResponseList<T> createEmptyResponseList();
 
     OEmbed createOEmbed(HttpResponse res) throws TwitterException;
+
+    DirectMessageEvent createDirectMessageEvent(HttpResponse res) throws TwitterException;
 }

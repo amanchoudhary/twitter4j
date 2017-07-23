@@ -299,6 +299,12 @@ class LazyJSONImplFactory implements ObjectFactory {
     }
 
     @Override
+    public DirectMessageEvent createDirectMessageEvent(HttpResponse res) throws TwitterException {
+//        return new LazyDirectMessageEvent(res, factory);
+        throw new TwitterException("Not Implemented");
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof LazyJSONImplFactory)) return false;

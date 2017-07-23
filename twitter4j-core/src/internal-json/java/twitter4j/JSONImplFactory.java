@@ -265,6 +265,11 @@ class JSONImplFactory implements ObjectFactory {
         return new OEmbedJSONImpl(res, conf);
     }
 
+    @Override
+    public DirectMessageEvent createDirectMessageEvent(HttpResponse res) throws TwitterException {
+        return new DirectMessageEventJSONImpl(res, conf);
+    }
+
     /**
      * static factory method for twitter-text-java
      *
