@@ -40,6 +40,12 @@ public final class StatusUpdate implements java.io.Serializable {
     private File mediaFile;
     private long[] mediaIds;
 
+    public void setTweetMode(String tweetMode) {
+        this.tweetMode = tweetMode;
+    }
+
+    private String tweetMode;
+
     public StatusUpdate(String status) {
         this.status = status;
     }
@@ -191,6 +197,9 @@ public final class StatusUpdate implements java.io.Serializable {
         appendParameter("place_id", placeId, params);
         if (!displayCoordinates) {
             appendParameter("display_coordinates", "false", params);
+        }
+        if (tweetMode != null) {
+            appendParameter("tweet_mode", tweetMode, params);
         }
         if (null != mediaFile) {
             params.add(new HttpParameter("media[]", mediaFile));
